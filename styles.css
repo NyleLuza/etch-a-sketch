@@ -1,0 +1,16 @@
+.main{
+    display: flex;
+    margin-left: -8px;
+    margin-right: -8px;
+    height: 800px;
+    border: 2px solid black;
+}
+.leftColumn{
+    border: 2px solid black;
+    width: 700px;
+}
+.rightColumn{
+    display: flex;
+    border: 2px solid red;
+    flex: 1;
+}
