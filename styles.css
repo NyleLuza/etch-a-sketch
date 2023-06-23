@@ -10,9 +10,14 @@
     width: 700px;
 }
 .rightColumn{
-    display: flex;
-    border: 2px solid red;
+    display: grid;
+    width: 80vw;
+    margin: auto;
 }
 .rightColumn > div{
     border: 2px solid green;
+}
+#size:hover{
+    background-color: red;
+    transition: 0.2s;
 }

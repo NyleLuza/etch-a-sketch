@@ -1,13 +1,19 @@
-let container = document.getElementsByClassName("rightColumn");
+let container = document.querySelector('.rightColumn');
 let sizes = document.getElementById("size");
-let boxSize = 5;
-let text = "ello";
+const grid = {rows:5,cols:5};
+const total = grid.rows * grid.cols;
 
-sizes.addEventListener('click',function grid(boxSize){
-    for(let i=0;i<container.length;i++){
-    let newDiv = document.createElement("div");
-    newDiv.setAttribute("class","list");
-    newDiv.innerText = "new div";
-    container[i].append(newDiv);
-    }
+sizes.addEventListener('click',()=>{
+    createGrid(total);
 });
+
+function createGrid(tot){
+    for(let i=0;i<tot;i++){
+        let newDiv = document.createElement("div");
+        container.append(newDiv);
+        newDiv.textContent = `${i+1}`;
+        newDiv.classList.add('box');
+        newDiv.style.backgroundColor = "blue";
+        }
+        container.style.setProperty(`grid-template-columns`,`repeat(${grid.cols},1fr)`);
+}
