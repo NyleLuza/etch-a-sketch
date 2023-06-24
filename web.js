@@ -7,13 +7,19 @@ sizes.addEventListener('click',()=>{
     createGrid(total);
 });
 
+container.addEventListener('mouseover',function(e){
+    if(e.target.matches('.box')){
+        e.target.classList.add('active');
+    }
+});
+
 function createGrid(tot){
     for(let i=0;i<tot;i++){
         let newDiv = document.createElement("div");
         container.append(newDiv);
         newDiv.textContent = `${i+1}`;
         newDiv.classList.add('box');
-        newDiv.style.backgroundColor = "blue";
+       
         }
         container.style.setProperty(`grid-template-columns`,`repeat(${grid.cols},1fr)`);
 }

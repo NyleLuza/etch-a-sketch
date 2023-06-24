@@ -21,3 +21,12 @@
     background-color: red;
     transition: 0.2s;
 }
+.box{
+    
+   
+    width: 100px;
+    height: 100px;
+}
+.box.active {
+    background-color: blue;
+  }
