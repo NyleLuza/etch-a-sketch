@@ -1,3 +1,4 @@
+/*
 let container = document.querySelector('.rightColumn');
 let sizes = document.getElementById("size");
 const grid = {rows:5,cols:5};
@@ -23,3 +24,10 @@ function createGrid(tot){
         }
         container.style.setProperty(`grid-template-columns`,`repeat(${grid.cols},1fr)`);
 }
+*/
+const input = document.querySelector("input");
+number = document.querySelector(".number");
+
+input.addEventListener("input", ()=>{
+    number.textContent = input.value;
+});
