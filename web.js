@@ -25,9 +25,9 @@ function createGrid(tot){
         container.style.setProperty(`grid-template-columns`,`repeat(${grid.cols},1fr)`);
 }
 */
-const input = document.querySelector("input");
+const input = document.querySelector("#scroll");
 number = document.querySelector(".number");
 
 input.addEventListener("input", ()=>{
-    number.textContent = input.value;
+    number.textContent = input.value + "x" + input.value;
 });
