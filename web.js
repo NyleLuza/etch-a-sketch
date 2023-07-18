@@ -25,9 +25,30 @@ function createGrid(tot){
         container.style.setProperty(`grid-template-columns`,`repeat(${grid.cols},1fr)`);
 }
 */
+const container = document.getElementById("rightColumn")
 const input = document.querySelector("#scroll");
 number = document.querySelector(".number");
+
+let col = 5;
+let row = 5;
 
 input.addEventListener("input", ()=>{
     number.textContent = input.value + "x" + input.value;
 });
+
+function createGrid(col, row){
+    let grid = document.createElement('div');
+    grid.className = 'grid';
+    for(let i=0; i<col; i++){
+        let column = document.createElement('div');
+        column.className = 'column';
+        for(let j=0; j<row; j++){
+            let row = document.createElement('div');
+            row.className = 'row';
+            column.appendChild(row);
+        }
+        grid.appendChild(column)
+    }
+    container.appendChild(grid);
+}
+createGrid(col, row);
