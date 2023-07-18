@@ -29,20 +29,18 @@ const container = document.getElementById("rightColumn")
 const input = document.querySelector("#scroll");
 number = document.querySelector(".number");
 
-let col = 5;
-let row = 5;
-
 input.addEventListener("input", ()=>{
     number.textContent = input.value + "x" + input.value;
+    createGrid(input.value);
 });
 
-function createGrid(col, row){
+function createGrid(col){
     let grid = document.createElement('div');
     grid.className = 'grid';
     for(let i=0; i<col; i++){
         let column = document.createElement('div');
         column.className = 'column';
-        for(let j=0; j<row; j++){
+        for(let j=0; j<col; j++){
             let row = document.createElement('div');
             row.className = 'row';
             column.appendChild(row);
@@ -51,4 +49,3 @@ function createGrid(col, row){
     }
     container.appendChild(grid);
 }
-createGrid(col, row);
